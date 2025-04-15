@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,12 +25,37 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				// FreshCheck Custom Colors
+				fresh: {
+					DEFAULT: '#4CAF50',
+					foreground: '#FFFFFF',
+					light: '#A5D6A7',
+					dark: '#2E7D32',
+				},
+				ripe: {
+					DEFAULT: '#FF9800',
+					foreground: '#FFFFFF',
+					light: '#FFE0B2',
+					dark: '#E65100',
+				},
+				berry: {
+					DEFAULT: '#9C27B0',
+					foreground: '#FFFFFF',
+					light: '#E1BEE7',
+					dark: '#6A1B9A',
+				},
+				apple: {
+					DEFAULT: '#F44336',
+					foreground: '#FFFFFF',
+					light: '#FFCDD2',
+					dark: '#B71C1C',
+				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#4CAF50',
+					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
+					DEFAULT: '#FF9800',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				destructive: {
@@ -52,16 +78,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -69,28 +85,30 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
 				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
+				"pulse-scale": {
+					"0%, 100%": { transform: "scale(1)" },
+					"50%": { transform: "scale(1.05)" },
+				},
+				"fade-in": {
+					"0%": { opacity: "0", transform: "translateY(10px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" },
+				},
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
-		}
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				"pulse-scale": "pulse-scale 2s ease-in-out infinite",
+				"fade-in": "fade-in 0.5s ease-out",
+			},
+		},
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
