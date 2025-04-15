@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,8 @@ import { supabase } from '@/lib/supabase';
 import { useToast } from '@/hooks/use-toast';
 import ImageCapture from '@/components/ImageCapture';
 import FoodResultCard from '@/components/FoodResultCard/FoodResultCard';
-import { analyzeImage, type GeminiResponse, type GeminiError } from '@/lib/gemini';
+import { analyzeImage } from '@/lib/gemini';
+import { GeminiResponse, GeminiError } from '@/types/gemini';
 
 const Home = () => {
   const [user, setUser] = useState<any>(null);

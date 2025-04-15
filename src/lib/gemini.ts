@@ -1,4 +1,5 @@
-import type { GeminiResponse, GeminiError } from '@/lib/gemini';
+
+import { GeminiResponse, GeminiError } from "@/types/gemini";
 
 const API_KEY = "AIzaSyB9I-f_Qketm5vbCKwMbKX8gDT27N6oYcQ";
 

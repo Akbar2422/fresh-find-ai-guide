@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Save, Share2 } from 'lucide-react';
-import { type GeminiResponse, type GeminiError } from '@/lib/gemini';
+import { GeminiResponse, GeminiError } from '@/types/gemini';
 import { supabase } from '@/lib/supabase';
 import { useToast } from '@/hooks/use-toast';
 
