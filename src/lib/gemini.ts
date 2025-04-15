@@ -1,42 +1,4 @@
-
-export type GeminiResponse = {
-  Identification: {
-    name: string;
-    varieties: string;
-  };
-  QualityCheck: {
-    rate: 'Good' | 'Average' | 'Bad';
-    reason: string;
-  };
-  NutritionInfo: {
-    calories: string;
-    protein: string;
-    carbohydrates: string;
-    fats: string;
-    fiber: string;
-    waterContent: string;
-  };
-  RecipeSuggestions: Array<{
-    name: string;
-    steps: string;
-    youtube_url: string;
-  }>;
-  StorageAdvice: {
-    method: string;
-    expiry_duration: string;
-  };
-  FridgeReminder: string;
-  LeaderboardInfo: string;
-  FunFact: string;
-  ArtificialCoatingDetection: {
-    signs: string;
-    confidence: string;
-  };
-};
-
-export type GeminiError = {
-  error: string;
-};
+import type { GeminiResponse, GeminiError } from '@/lib/gemini';
 
 const API_KEY = "AIzaSyB9I-f_Qketm5vbCKwMbKX8gDT27N6oYcQ";
 
@@ -91,7 +53,7 @@ export const analyzeImage = async (imageFile: File): Promise<GeminiResponse | Ge
 
     // Call Gemini API
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent?key=${API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
       {
         method: 'POST',
         headers: {
